@@ -188,6 +188,9 @@ a:hover{
     display: block;
 }
 
+#imagen-responsive{
+    display: none;
+}
 
 .icfooter{
     width: 18px;
