@@ -189,7 +189,7 @@ a:hover{
 }
 
 #imagen-responsive{
-    display: block;
+    display: none;
 }
 
 .icfooter{
@@ -259,6 +259,7 @@ a:hover{
         display: block;
         width: 96%;
         margin: 0 2%;
+        filter: grayscale(1);
     }
 
     .imagenfooter{
