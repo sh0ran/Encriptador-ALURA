@@ -189,7 +189,7 @@ a:hover{
 }
 
 #imagen-responsive{
-    display: none;
+    display: block;
 }
 
 .icfooter{
