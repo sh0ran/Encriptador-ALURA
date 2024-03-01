@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>
+            <div class="contenedor">
+                <div class="imagen-container">
+                    <img src="imagenes/logo alura.png" class="imagen" alt="Logo de Alura">
+                </div>
+                <img src="imagenes/titulo-texto.png" class="imagenTitulo" alt="Encriptador de Texto">
+            </div>
+        </h1>
+    </header>
+    <main>
+        <section class="composicion">
+            <fieldset class="area1">
+                <textarea id="campo-texto" placeholder="Ingrese el texto aqui solo minusculas..."></textarea>
+                <div class="botones">
+                    <input type="submit" value="ENCRIPTAR" class="btnencriptar" onclick="cifrarTexto()"></input>
+                    <input type="submit" value="DESENCRIPTAR" class="btndesencriptar" onclick="descifrarTexto()"></input>
+                </div>
+            </fieldset>
+            <fieldset class="area2">
+                <textarea id="campo-mensaje" placeholder="Ningun mensaje fue encontrado." class="placeholder-grande"></textarea>
+                <div class="botones2">
+                    <input type="submit" value="COPIAR" id="boton-copiar" ></input>
+                </div>
+            </fieldset>
+        </section>
+    </main>
+    <script src="javaencriptador.js"></script>
+<footer>
+    <img src="imagenes/icono candado footer.png" alt="Icono de candado" class="imagenfooter">
+    <p>&copy Copyright by Berto Huarachi</p>
+    <ul>
+        <li><img src="imagenes/icono linkedin.png" alt="Linkedin" class="icfooter"><a href="https://www.linkedin.com/in/bertoh22"</a>LinkedIn</li>  
+        <li><img src="imagenes/icono github.png" alt="GitHub" class="icfooter"><a href="https://github.com/sh0ran?tab=repositories">GitHub</a></li>
+        <li><img src="imagenes/logo alura.png" alt="Alura" class="icfooter"><a href="https://www.aluracursos.com/">Alura Latam</a></li>
+    </ul>
+</footer>
+</body>
+</html>
