@@ -35,12 +35,12 @@ body{
 .imagenTitulo{
     width: 40%;
     display: flexbox;
-    margin:35px 0 40px 115px;
+    margin:35px 0 35px 115px;
 }
 
 .composicion{
     width: 96%;
-    height: 380px;
+    height: 367px;
     display: flex;
     border-radius: 15px ;
     background-color: rgba(255,255,255,0.2);
@@ -61,8 +61,8 @@ body{
 #campo-texto{
     display: inline-block;
     width: 88%;
-    height: 250px;
-    margin: 15px 15px;
+    height: 240px;
+    margin: 5px 15px 15px 15px;
     border-radius: 15px;
     padding: 15px 20px;
     display: inline-block;
@@ -92,7 +92,8 @@ input{
     font-size: 20px;
     font-weight: bold;
     color: white;
-    transition: transform 0.3s ease-in-out;
+    border:none;
+    box-shadow: inset 0px 3px 3px wheat, 0 3px 3px rgb(1,11,34);
 }
 
 input:hover{
@@ -110,16 +111,16 @@ input:hover{
 }
 
 .area2 ::placeholder{
-    font-size: 20px;
+    font-size: 30px;
 }
 
 #campo-mensaje {
     display: flex;
     border-radius: 15px;
     padding: 15px 20px;
-    margin: 15px 15px;
+    margin: 5px 15px 15px 15px;
     width: 80%;
-    height: 250px;
+    height: 240px;
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -179,6 +180,14 @@ a:hover{
     color: rgb(40, 25, 252);
 }
 
+#imagen-default{
+    width: 96%;
+    margin: 20px 2% 0 2%;
+    opacity: 0.9;
+    filter: grayscale(1);
+    display: block;
+}
+
 
 .icfooter{
     width: 18px;
@@ -187,6 +196,13 @@ a:hover{
 }
 
 @media screen and (max-width:480px){
+    body{
+        background-size: 100% 60%;
+    }
+
+    .imagenTitulo{
+        width: 60%;
+    }
     .composicion{
         display:flexbox;
         width: auto;
@@ -230,6 +246,16 @@ a:hover{
 
     #campo-mensaje::placeholder{
         font-size: 19px;
+    }
+
+    #imagen-default{
+        display: none;
+    }
+
+    #imagen-responsive{
+        display: block;
+        width: 96%;
+        margin: 0 2%;
     }
 
     .imagenfooter{
