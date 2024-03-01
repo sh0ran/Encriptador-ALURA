@@ -120,7 +120,7 @@ input:hover{
     margin: 15px 15px;
     width: 80%;
     height: 250px;
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     transition: opacity 0.3s ease-in;
 }
