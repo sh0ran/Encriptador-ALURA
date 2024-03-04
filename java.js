@@ -6,22 +6,28 @@ botonCopiar.addEventListener("click", function() {
     copiarAlPortapapeles();
 });
 
-const matrizVocales = [
-    ["e", "enter"],
-    ["i", "imes"],
-    ["a", "ai"],
-    ["o", "ober"],
-    ["u", "ufat"]
-];
-
 function cifrarTexto() {
-    const textoCifrado = aplicarCifrado(inputTexto.value, true);
+    const textoCifrado = aplicarCifrado(inputTexto.value);
     inputMensaje.value = textoCifrado;
 }
 
 function descifrarTexto() {
-    const textoDescifrado = aplicarCifrado(inputTexto.value, false);
+    const textoDescifrado = aplicarDescifrado(inputTexto.value);
     inputMensaje.value = textoDescifrado;
+}
+
+function aplicarCifrado(texto) {
+    const reemplazoEn = {'a': 'ai', 'e': 'enter', 'i': 'imes', 'o': 'ober', 'u': 'ufat'};
+    const textoCifrado = texto.split('').map(caracter => reemplazoEn[caracter] || caracter).join('');
+    
+    return textoCifrado;
+}
+
+function aplicarDescifrado(texto) {
+    const reemplazoInverso = {'ai': 'a', 'enter': 'e', 'imes': 'i', 'ober': 'o', 'ufat': 'u'};
+    const textoDescifrado = texto.split(/(ai|enter|imes|ober|ufat)/).map(subcadena => reemplazoInverso[subcadena] || subcadena).join('');
+    
+    return textoDescifrado;
 }
 
 function copiarAlPortapapeles() {
@@ -32,20 +38,9 @@ function copiarAlPortapapeles() {
     window.getSelection().removeAllRanges();
 }
 
-function aplicarCifrado(texto, cifrar) {
-    for (const [vocalOriginal, vocalReemplazo] of matrizVocales) {
-        const vocal = cifrar ? vocalOriginal : vocalReemplazo;
-        const vocalReemplazada = cifrar ? vocalReemplazo : vocalOriginal;
-        const regex = new RegExp(`(?<=\\b|[^aeiou])${vocal}(?=[^aeiou]|\\b)`, 'g');
-        texto = texto.replace(regex, vocalReemplazada);
-    }
-    return texto;
-}
-
 inputTexto.addEventListener("input", function() {
     const valorActual = inputTexto.value;
     const caracteresProhibidos = /[A-Z0-9áéíóúüñ¡!*Ç´`¨ªº'_^<>¿?.,:;+-]/g;
-
     if (caracteresProhibidos.test(valorActual)) {
         alert("Por favor, ingrese solo letras minúsculas y sin caracteres especiales.");
         inputTexto.value = valorActual.replace(caracteresProhibidos, '');
