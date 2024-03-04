@@ -1,1 +1,1 @@
-![Encriptador de texto #CHALLENGE Alura Latam - Grupo #6] (https://www.mediafire.com/view/tue0l8wada89p7z/readme.jpg/file)
+![Vista previa del Encriptador - WEB - MOVIL](https://github.com/sh0ran/Encriptador-ALURA/assets/39629102/2e97fb0d-7364-4498-afba-ad688a489e0b)
