@@ -5,6 +5,7 @@ const botonCopiar = document.querySelector("#boton-copiar");
 botonCopiar.addEventListener("click", function() {
     copiarAlPortapapeles();
 });
+
 const matrizVocales = [
     ["e", "enter"],
     ["i", "imes"],
@@ -28,7 +29,6 @@ function copiarAlPortapapeles() {
     document.execCommand("copy");
     inputTexto.value = inputMensaje.value;
     inputMensaje.value = '';
-
     window.getSelection().removeAllRanges();
 }
 
@@ -37,7 +37,6 @@ function aplicarCifrado(texto, cifrar) {
         const vocal = cifrar ? vocalOriginal : vocalReemplazo;
         const vocalReemplazada = cifrar ? vocalReemplazo : vocalOriginal;
         const regex = new RegExp(`(?<=\\b|[^aeiou])${vocal}(?=[^aeiou]|\\b)`, 'g');
-        texto = texto.replace(new RegExp(vocalReemplazo, 'g'), vocalOriginal);
         texto = texto.replace(regex, vocalReemplazada);
     }
     return texto;
@@ -45,7 +44,7 @@ function aplicarCifrado(texto, cifrar) {
 
 inputTexto.addEventListener("input", function() {
     const valorActual = inputTexto.value;
-    const caracteresProhibidos = /[A-Z0-9áéíóúüñ¡!@#~$%&/()<>=*_`'Ç¨ºª¿?.,:;+-]/g;
+    const caracteresProhibidos = /[A-Z0-9áéíóúüñ¡!*Ç´`¨ªº'_^<>¿?.,:;+-]/g;
 
     if (caracteresProhibidos.test(valorActual)) {
         alert("Por favor, ingrese solo letras minúsculas y sin caracteres especiales.");
