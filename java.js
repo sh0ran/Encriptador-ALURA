@@ -5,7 +5,6 @@ const botonCopiar = document.querySelector("#boton-copiar");
 botonCopiar.addEventListener("click", function() {
     copiarAlPortapapeles();
 });
-
 const matrizVocales = [
     ["e", "enter"],
     ["i", "imes"],
@@ -25,15 +24,11 @@ function descifrarTexto() {
 }
 
 function copiarAlPortapapeles() {
-    // Copiar el texto cifrado o descifrado al portapapeles
     inputMensaje.select();
     document.execCommand("copy");
-
-    // Pegar el texto en el área de texto original y eliminarlo del área de mensaje
     inputTexto.value = inputMensaje.value;
     inputMensaje.value = '';
 
-    // Deseleccionar el texto
     window.getSelection().removeAllRanges();
 }
 
@@ -42,6 +37,7 @@ function aplicarCifrado(texto, cifrar) {
         const vocal = cifrar ? vocalOriginal : vocalReemplazo;
         const vocalReemplazada = cifrar ? vocalReemplazo : vocalOriginal;
         const regex = new RegExp(`(?<=\\b|[^aeiou])${vocal}(?=[^aeiou]|\\b)`, 'g');
+        texto = texto.replace(new RegExp(vocalReemplazo, 'g'), vocalOriginal);
         texto = texto.replace(regex, vocalReemplazada);
     }
     return texto;
@@ -49,11 +45,10 @@ function aplicarCifrado(texto, cifrar) {
 
 inputTexto.addEventListener("input", function() {
     const valorActual = inputTexto.value;
-    const caracteresProhibidos = /[A-Z0-9áéíóúüñ¡¿?.,:;+-]/g;
+    const caracteresProhibidos = /[A-Z0-9áéíóúüñ¡!@#~$%&/()<>=*_`'Ç¨ºª¿?.,:;+-]/g;
 
     if (caracteresProhibidos.test(valorActual)) {
         alert("Por favor, ingrese solo letras minúsculas y sin caracteres especiales.");
-        // Puedes agregar más lógica, como limpiar el campo o deshacer la última entrada no permitida
         inputTexto.value = valorActual.replace(caracteresProhibidos, '');
     }
 });
