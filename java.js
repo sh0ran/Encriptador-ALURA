@@ -49,7 +49,7 @@ function aplicarCifrado(texto, cifrar) {
 
 inputTexto.addEventListener("input", function() {
     const valorActual = inputTexto.value;
-    const caracteresProhibidos = /[A-Záéíóúüñ¡¿?.,:;+-]/g;
+    const caracteresProhibidos = /[A-Z0-9áéíóúüñ¡¿?.,:;+-]/g;
 
     if (caracteresProhibidos.test(valorActual)) {
         alert("Por favor, ingrese solo letras minúsculas y sin caracteres especiales.");
