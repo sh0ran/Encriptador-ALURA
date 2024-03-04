@@ -143,7 +143,9 @@ p{
     display: inline-block;
     color: white;
     font-weight: normal;
+    text-align: center;
     margin-right: 40px;
+    line-height: 1.5;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
